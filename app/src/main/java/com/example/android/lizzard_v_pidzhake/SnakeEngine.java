@@ -28,8 +28,9 @@ public class SnakeEngine extends SurfaceView implements Runnable {
     private int snake_crash = -1;
 
     public enum Heading {UP, RIGHT, DOWN, LEFT}
+    public boolean isSoundEnable = MainActivity.isSoundEnable();
 
-    ;
+
     private Heading heading = Heading.RIGHT;
     private int screenX;
     private int screenY;
@@ -135,11 +136,11 @@ public class SnakeEngine extends SurfaceView implements Runnable {
         bobY = random.nextInt(numBlocksHigh - 1) + 1;
     }
 
-    private void eatBob() {
+    public void eatBob() {
         snakeLength++;
         spawnBob();
         score += 1;
-        soundPool.play(eat_bob, 1, 1, 0, 0, 1);
+        if (isSoundEnable) soundPool.play(eat_bob, 1, 1, 0, 0, 1);
     }
 
     public void moveSnake() {
@@ -193,7 +194,7 @@ public class SnakeEngine extends SurfaceView implements Runnable {
         moveSnake();
 
         if (detectDeath()) {
-            soundPool.play(snake_crash, 1, 1, 0, 0, 1);
+            if (isSoundEnable) soundPool.play(snake_crash, 1, 1, 0, 0, 1);
             newGame();
         }
     }

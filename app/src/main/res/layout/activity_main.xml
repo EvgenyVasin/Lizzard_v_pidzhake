@@ -37,7 +37,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
         app:layout_constraintVertical_bias="0.1"
-        android:onClick="onClick" />
+        android:onClick="onClickPlay" />
 
     <Button
         android:id="@+id/score_button"
@@ -61,7 +61,8 @@
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/score_button"
-        app:layout_constraintVertical_bias="0.7" />
+        app:layout_constraintVertical_bias="0.7"
+        android:onClick="onClickSound"/>
 
     <Button
         android:id="@+id/exit_button"
