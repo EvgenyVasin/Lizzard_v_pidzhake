@@ -42,6 +42,7 @@ public class myMainActivity extends Activity {
     }
 
     public void onClickPlay(View view) {
+        mPlayer.stop();
         Intent intent = new Intent(this, SnakeActivity.class);
         startActivity(intent);
     }
@@ -52,7 +53,9 @@ public class myMainActivity extends Activity {
             soundEnable = false;
             soundButton.setText("Sound disabled");
             mPlayer.stop();
-        } else {
+        }
+
+        if(!soundEnable) {
             soundEnable = true;
             soundButton.setText("Sound enabled");
             try{
