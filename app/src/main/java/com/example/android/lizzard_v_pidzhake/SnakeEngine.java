@@ -91,7 +91,6 @@ public class SnakeEngine extends SurfaceView implements Runnable {
         while (isPlaying) {
 
             if (updateRequired()) {
-
                 update();
                 draw();
             }
