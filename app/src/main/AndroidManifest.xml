@@ -21,8 +21,11 @@
         </activity>
         <activity
             android:name=".SnakeActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity android:name=".myMainActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
     </application>
 
 </manifest>

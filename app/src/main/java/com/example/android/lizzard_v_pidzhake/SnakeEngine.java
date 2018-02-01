@@ -28,7 +28,7 @@ public class SnakeEngine extends SurfaceView implements Runnable {
     private int snake_crash = -1;
 
     public enum Heading {UP, RIGHT, DOWN, LEFT}
-    public boolean isSoundEnable = MainActivity.isSoundEnable();
+    public boolean isSoundEnable = myMainActivity.isSoundEnable();
 
 
     private Heading heading = Heading.RIGHT;
