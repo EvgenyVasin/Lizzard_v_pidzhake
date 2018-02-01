@@ -4,12 +4,17 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 
 public class MainActivity extends Activity {
+
+    private View view;
 
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+            view = (View) findViewById(R.id.logo);
+
 
             new Handler().postDelayed(new Runnable() {
 
@@ -20,11 +25,12 @@ public class MainActivity extends Activity {
                     finish();
                 }
             }, 5000);
-
         }
 
-
-
-
+    public void onClickStart(View view) {
+        Intent splash = new Intent(MainActivity.this, myMainActivity.class);
+        startActivity(splash);
+        finish();
+    }
 
 }

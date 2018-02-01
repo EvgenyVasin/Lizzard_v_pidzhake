@@ -206,8 +206,8 @@ public class SnakeEngine extends SurfaceView implements Runnable {
             canvas.drawColor(Color.argb(255, 26, 128, 182));
             paint.setColor(Color.argb(255, 255, 225, 255));
 
-            paint.setTextSize(90);
-            canvas.drawText("Score: " + score, 10, 70, paint);
+            paint.setTextSize(40);
+            canvas.drawText("Score: " + score, 10, 40, paint);
 
             for (int i = 0; i < snakeLength; i++) {
                 canvas.drawRect(snakeXs[i] * blockSize,
