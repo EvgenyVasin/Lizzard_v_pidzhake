@@ -25,6 +25,9 @@ public class SnakeActivity extends Activity {
 
         // Make snakeEngine the view of the Activity
         setContentView(snakeEngine);
+
+
+
     }
 
     @Override

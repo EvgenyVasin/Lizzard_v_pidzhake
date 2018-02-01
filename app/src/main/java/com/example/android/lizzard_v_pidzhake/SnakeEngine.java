@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -50,6 +51,7 @@ public class SnakeEngine extends SurfaceView implements Runnable {
     private Canvas canvas;
     private SurfaceHolder surfaceHolder;
     private Paint paint;
+    private MediaPlayer mPlayer;
 
     public SnakeEngine(Context contex, Point size) {
         super(contex);
@@ -88,7 +90,7 @@ public class SnakeEngine extends SurfaceView implements Runnable {
     @Override
     public void run() {
 
-        while (isPlaying) {
+       while (isPlaying) {
 
             if (updateRequired()) {
                 update();
@@ -117,6 +119,8 @@ public class SnakeEngine extends SurfaceView implements Runnable {
     }
 
     public void newGame() {
+
+
 
         snakeLength = 1;
         snakeXs[0] = NUM_BLOCKS_WIDE / 2;
