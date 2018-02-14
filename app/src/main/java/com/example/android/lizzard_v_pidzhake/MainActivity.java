@@ -13,8 +13,6 @@ public class MainActivity extends Activity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
-            view = (View) findViewById(R.id.logo);
-
 
             new Handler().postDelayed(new Runnable() {
 
@@ -26,11 +24,5 @@ public class MainActivity extends Activity {
                 }
             }, 5000);
         }
-
-    public void onClickStart(View view) {
-        Intent splash = new Intent(MainActivity.this, myMainActivity.class);
-        startActivity(splash);
-        finish();
-    }
 
 }

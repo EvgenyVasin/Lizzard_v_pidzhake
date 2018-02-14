@@ -42,7 +42,7 @@ public class SnakeEngine extends SurfaceView implements Runnable {
     private final int NUM_BLOCKS_WIDE = 40;
     private int numBlocksHigh;
     private long nextFrameTime;
-    private final long FPS = 5;
+    public long fps = myMainActivity.getFps();
     private final long MILLIS_PER_SECOND = 1000;
     private int score;
     private int[] snakeXs;
@@ -235,7 +235,7 @@ public class SnakeEngine extends SurfaceView implements Runnable {
 
     public boolean updateRequired() {
         if (nextFrameTime <= System.currentTimeMillis()) {
-            nextFrameTime = System.currentTimeMillis() + MILLIS_PER_SECOND / FPS;
+            nextFrameTime = System.currentTimeMillis() + MILLIS_PER_SECOND / fps;
             return true;
         }
         return false;

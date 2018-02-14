@@ -5,11 +5,11 @@
     android:orientation="vertical" android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#3cb6d2"
-    android:id="@+id/main"
-    android:onClick="onClickStart">
+    android:id="@+id/main" >
 
-    <!-- Здесь, cat - имя вашего изображения. -->
-    <ImageView android:id="@+id/splash_screen" android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/splash_screen"
+        android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:src="@drawable/logo"
         android:layout_gravity="center"/>
