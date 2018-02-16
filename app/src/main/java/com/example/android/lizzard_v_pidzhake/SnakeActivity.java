@@ -26,9 +26,9 @@ public class SnakeActivity extends Activity {
         // Make snakeEngine the view of the Activity
         setContentView(snakeEngine);
 
-
-
     }
+
+
 
     @Override
     protected void onResume() {
@@ -41,5 +41,6 @@ public class SnakeActivity extends Activity {
         super.onPause();
         snakeEngine.pause();
     }
+
 
 }

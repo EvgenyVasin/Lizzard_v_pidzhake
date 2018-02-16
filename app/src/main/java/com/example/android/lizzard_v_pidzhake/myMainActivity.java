@@ -11,7 +11,6 @@ import android.widget.TextView;
 public class myMainActivity extends Activity {
 
     private Button playButton;
-    private Button scoreButton;
     private Button soundButton;
     private Button exitButton;
     private Button difficulty1;
@@ -29,7 +28,6 @@ public class myMainActivity extends Activity {
         setContentView(R.layout.activity_my_main);
 
         playButton = (Button) findViewById(R.id.play_button);
-        scoreButton = (Button) findViewById(R.id.score_button);
         soundButton = (Button) findViewById(R.id.sound_button);
         exitButton = (Button) findViewById(R.id.exit_button);
         difficulty1 = (Button) findViewById(R.id.difficultly1);
@@ -39,11 +37,6 @@ public class myMainActivity extends Activity {
 
     public void onClickPlay(View view) {
         Intent intent = new Intent(this, SnakeActivity.class);
-        startActivity(intent);
-    }
-
-    public void onClickScore(View view){
-        Intent intent = new Intent(this, ScoreActivity.class);
         startActivity(intent);
     }
 

@@ -10,9 +10,12 @@ import android.graphics.Point;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.Random;
@@ -106,21 +109,20 @@ public class SnakeEngine extends SurfaceView implements Runnable {
 
         try {
             thread.join();
+
         } catch (InterruptedException e) {
             //Error
         }
     }
 
     public void resume() {
-
         isPlaying = true;
         thread = new Thread(this);
         thread.start();
     }
 
+
     public void newGame() {
-
-
 
         snakeLength = 1;
         snakeXs[0] = NUM_BLOCKS_WIDE / 2;
@@ -144,6 +146,14 @@ public class SnakeEngine extends SurfaceView implements Runnable {
         spawnBob();
         score += 1;
         if (isSoundEnable) soundPool.play(eat_bob, 1, 1, 0, 0, 1);
+
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                Toast eatPlanet = Toast.makeText(getContext(), "You eat bob", Toast.LENGTH_SHORT);
+                eatPlanet.show();
+            }
+        }, 10 );
     }
 
     public void moveSnake() {
@@ -188,6 +198,8 @@ public class SnakeEngine extends SurfaceView implements Runnable {
         }
         return death;
     }
+
+
 
     public void update() {
         if (snakeYs[0] == bobY && snakeXs[0] == bobX) {
