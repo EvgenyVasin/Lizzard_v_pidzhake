@@ -1,6 +1,7 @@
 package com.example.android.lizzard_v_pidzhake;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.Canvas;
@@ -55,6 +56,7 @@ public class SnakeEngine extends SurfaceView implements Runnable {
     private SurfaceHolder surfaceHolder;
     private Paint paint;
     private MediaPlayer mPlayer;
+    public static boolean isStopped = false;
 
     public SnakeEngine(Context contex, Point size) {
         super(contex);
@@ -109,7 +111,6 @@ public class SnakeEngine extends SurfaceView implements Runnable {
 
         try {
             thread.join();
-
         } catch (InterruptedException e) {
             //Error
         }
@@ -119,6 +120,18 @@ public class SnakeEngine extends SurfaceView implements Runnable {
         isPlaying = true;
         thread = new Thread(this);
         thread.start();
+    }
+
+    public void stop(){
+        isStopped = true;
+        isPlaying = false;
+        Intent intent = new Intent(getContext(), myMainActivity.class);
+        getContext().startActivity(intent);
+        getContext().stopService(intent);
+    }
+
+    public static boolean isStopped(){
+        return isStopped;
     }
 
 
@@ -210,7 +223,7 @@ public class SnakeEngine extends SurfaceView implements Runnable {
 
         if (detectDeath()) {
             if (isSoundEnable) soundPool.play(snake_crash, 1, 1, 0, 0, 1);
-            newGame();
+            stop();
         }
     }
 

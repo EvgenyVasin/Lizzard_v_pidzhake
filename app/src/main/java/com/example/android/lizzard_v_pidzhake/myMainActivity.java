@@ -53,7 +53,7 @@ public class myMainActivity extends Activity {
     public void onClickDifficultly1(View view){
         fps = 5;
         TextView difficultly = (TextView) findViewById(R.id.difficultly);
-        difficultly.setText("LOVER DIFFICULTLY");
+        difficultly.setText("LOW DIFFICULTLY");
     }
 
     public void onClickDifficultly2(View view){

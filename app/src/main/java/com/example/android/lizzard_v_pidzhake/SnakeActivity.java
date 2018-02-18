@@ -42,5 +42,10 @@ public class SnakeActivity extends Activity {
         snakeEngine.pause();
     }
 
+    public void onStop(){
+        super.onStop();
+        snakeEngine.stop();
+    }
+
 
 }
